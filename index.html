@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⋆｡‧˚ʚ🐚 CoralCulator 🐚ɞ˚‧｡⋆</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 95vh;
+      background-image: url("https://i.pinimg.com/736x/ae/63/18/ae63185d645b4799272f09a290709508.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .calculator {
+      background: #A2D2DF;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 35px 35px rgba(39,68,93,0.3);
+    }
+    input[type="text"] {
+      width: 85%;
+      font-family: Courier;
+      font-weight: Bold;
+      font-size: 24px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .buttons button {
+      font-family: Courier;
+      font-weight: Bold;
+      color: #205781;
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('+')">+</button><br>
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button onclick="press('-')">-</button><br>
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button onclick="press('*')">*</button><br>
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="press('/')">/</button><br>
+      <button onclick="clearDisplay()" style="width: 250px;">˚ʚTide Out⋆˚࿔ </button>
+    </div>
+  </div>
+
+  <script>
+    function press(value) {
+      document.getElementById('display').value += value;
+    }
+    function calculate() {
+      try {
+        document.getElementById('display').value = eval(document.getElementById('display').value);
+      } catch {
+        document.getElementById('display').value = "Error";
+      }
+    }
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+  </script>
+</body>
+</html>
